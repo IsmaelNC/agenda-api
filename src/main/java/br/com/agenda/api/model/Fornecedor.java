@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.agenda.api.model;
 
 import java.io.Serializable;
@@ -14,15 +11,13 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-/**
- * @author ismaelnc
- *
- */
 @Data
 @Entity
-@Table(name="contatos")
-public class Contato implements Serializable {
-
+@Table(name="fornecedor")
+public class Fornecedor implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -31,8 +26,17 @@ public class Contato implements Serializable {
 	private String nome;
 	
 	@Column
+	private String telefone;
+	
+	@Column
 	private String email;
 	
+	@Column
+	private String cnpj;
+	
+	@Column
+	private String razaoSocial;
+
 
 	public Long getId() {
 		return id;
@@ -50,6 +54,14 @@ public class Contato implements Serializable {
 		this.nome = nome;
 	}
 
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -57,4 +69,21 @@ public class Contato implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+	
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
+	
 }

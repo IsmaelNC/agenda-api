@@ -15,7 +15,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
- * @author carlosbarbosagomesfilho
+ * @author ismaelnc
  *
  */
 @ControllerAdvice
@@ -34,5 +34,32 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(ex, ex.getLocalizedMessage(), 
           new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
+    
+	@ExceptionHandler({ ClienteNotFoundException.class })
+    protected ResponseEntity<Object> handleNotFoundCliente(Exception ex, WebRequest request) {
+        return handleExceptionInternal(ex, "Contato não encontrado", 
+          new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
 	
+    @ExceptionHandler({ ClienteIdMismatchException.class, 
+        ConstraintViolationException.class, 
+        DataIntegrityViolationException.class })
+      public ResponseEntity<Object> handleBadRequestCliente(Exception ex, WebRequest request) {
+          return handleExceptionInternal(ex, ex.getLocalizedMessage(), 
+            new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+    }
+	
+	@ExceptionHandler({ FornecedorNotFoundException.class })
+    protected ResponseEntity<Object> handleNotFoundFornecedor(Exception ex, WebRequest request) {
+        return handleExceptionInternal(ex, "Contato não encontrado", 
+          new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
+	
+    @ExceptionHandler({ FornecedorIdMismatchException.class, 
+        ConstraintViolationException.class, 
+        DataIntegrityViolationException.class })
+      public ResponseEntity<Object> handleBadRequestFornecedor(Exception ex, WebRequest request) {
+          return handleExceptionInternal(ex, ex.getLocalizedMessage(), 
+            new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+    }
 }

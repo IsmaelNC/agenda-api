@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import br.com.agenda.api.model.Contato;
 
 /**
- * @author carlosbarbosagomesfilho
+ * @author ismaelnc
  *
  */
 @Repository

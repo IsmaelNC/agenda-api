@@ -4,7 +4,7 @@
 package br.com.agenda.api.handler;
 
 /**
- * @author carlosbarbosagomesfilho
+ * @author ismaelnc
  *
  */
 public class ContatoNotFoundException extends RuntimeException {

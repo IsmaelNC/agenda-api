@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.agenda.api.service;
 
 import java.util.List;
@@ -9,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.agenda.api.model.Contato;
-import br.com.agenda.api.repository.ContatoRepository;
+import br.com.agenda.api.model.Cliente;
+import br.com.agenda.api.repository.ClienteRepository;
 
 /**
  * @author ismaelnc
@@ -18,48 +15,48 @@ import br.com.agenda.api.repository.ContatoRepository;
  */
 
 @Service
-public class ContatoService {
-
+public class ClienteService {
+	
 	@Autowired
-	private ContatoRepository repository;
+	private ClienteRepository repository;
 	
 	@Transactional
-	public void save(Contato contato) {
-		this.repository.save(contato);
+	public void save(Cliente cliente) {
+		this.repository.save(cliente);
 	}
 	
 	@Transactional(readOnly=true)
-	public List<Contato> listContatos(){
+	public List<Cliente> listClientes(){
 		return this.repository.findAll();
 	}
 	
 	@Transactional
-	public void removeContato(Contato contato) {
-		this.repository.delete(contato);
+	public void removerCliente(Cliente cliente) {
+		this.repository.delete(cliente);
 	}
 	
 	@Transactional
-	public void removeContatoById(Long id) {
+	public void removeClienteById(Long id) {
 		this.repository.deleteById(id);
 	}
 	
 	@Transactional
-	public void updateContato(Contato contato) {
-		this.repository.saveAndFlush(contato);
+	public void updateCliente(Cliente cliente) {
+		this.repository.saveAndFlush(cliente);
 	}
 	
 	@Transactional(readOnly=true)
-	public Contato getById(Long id) {
+	public Cliente getById(Long id) {
 		return this.repository.getOne(id);
 	}
 	
 	@Transactional(readOnly=true)
-	public Contato buscaPorNome(String nome) {
+	public Cliente buscaPorNome(String nome) {
 		return this.repository.findByNome(nome);
 	}
 	
 	@Transactional(readOnly=true)
-	public Contato buscaPorEmail(String email) {
+	public Cliente buscaPorEmail(String email) {
 		return this.repository.findByEmail(email);
 	}
 }

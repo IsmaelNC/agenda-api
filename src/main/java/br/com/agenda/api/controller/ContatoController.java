@@ -24,7 +24,7 @@ import br.com.agenda.api.model.Contato;
 import br.com.agenda.api.service.ContatoService;
 
 /**
- * @author carlosbarbosagomesfilho
+ * @author ismaelnc
  *
  */
 @RestController
