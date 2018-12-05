@@ -32,7 +32,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteService service;
 	
-	@GetMapping("/cliente")
+	@GetMapping("/clientes")
 	public List<Cliente> list() {
 		List<Cliente> cliente = this.service.listClientes();
 		return cliente;
