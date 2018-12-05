@@ -1,9 +1,9 @@
-package br.com.agenda.api.handler;
+/*package br.com.agenda.api.handler;
 
 /**
  * @author ismaelnc
  *
  */
-public class FornecedorIdMismatchException extends Throwable{
+/*public class FornecedorIdMismatchException extends Throwable{
 
-}
+}*/

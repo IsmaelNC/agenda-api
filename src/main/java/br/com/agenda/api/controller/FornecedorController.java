@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.agenda.api.handler.ContatoNotFoundException;
-import br.com.agenda.api.handler.FornecedorNotFoundException;
+//import br.com.agenda.api.handler.ContatoNotFoundException;
+//import br.com.agenda.api.handler.FornecedorNotFoundException;
 import br.com.agenda.api.model.Fornecedor;
 import br.com.agenda.api.service.FornecedorService;
 
@@ -52,9 +52,9 @@ public class FornecedorController {
 		Fornecedor fornecedor = service.getById(id);
 		if(fornecedor != null) {
 			service.removerFornecedorById(id);
-		}else {
-			throw new FornecedorNotFoundException("Fornecedor não encontrado", null);
-		}
+		}//else {
+		//	throw new FornecedorNotFoundException("Fornecedor não encontrado", null);
+		//}
 	}
 	
 	@PutMapping("/fornecedores")
@@ -62,13 +62,13 @@ public class FornecedorController {
 		this.service.updateFornecedor(fornecedor);
 	}
 	
-	@GetMapping("/fornecedores/{nome}")
+	@GetMapping("/fornecedores/buscarPorNome/{nome}")
 	public Fornecedor buscaPorNome(@PathVariable String nome) {
 		Fornecedor fornecedor = this.service.buscaPorNome(nome);
 		return fornecedor;
 	}
 	
-	@GetMapping("/buscarPorEmail/{email}")
+	@GetMapping("fornecedores/buscarPorEmail/{email}")
 	public Fornecedor buscaPorEmail(@PathVariable String email) {
 		Fornecedor fornecedor = this.service.buscaPorEmail(email);
 		return fornecedor;

@@ -1,7 +1,7 @@
-/**
+/*/**
  * 
  */
-package br.com.agenda.api.handler;
+/*package br.com.agenda.api.handler;
 
 import javax.validation.ConstraintViolationException;
 
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * @author ismaelnc
  *
  */
-@ControllerAdvice
+/*@ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler({ ContatoNotFoundException.class })
@@ -62,4 +62,4 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
           return handleExceptionInternal(ex, ex.getLocalizedMessage(), 
             new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
-}
+}*/

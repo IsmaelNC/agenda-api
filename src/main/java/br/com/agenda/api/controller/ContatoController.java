@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.agenda.api.handler.ContatoNotFoundException;
+//import br.com.agenda.api.handler.ContatoNotFoundException;
 import br.com.agenda.api.model.Contato;
 import br.com.agenda.api.service.ContatoService;
 
@@ -56,9 +56,9 @@ public class ContatoController {
 		Contato contato = service.getById(id);
 		if(contato != null) {
 			service.removeContatoById(id);
-		}else {
-			throw new ContatoNotFoundException("Contato não encontrado", null);
-		}
+		}//else {
+		//	throw new ContatoNotFoundException("Contato não encontrado", null);
+		//}
 	}
 	
 	@PutMapping("/contatos")

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.agenda.api.handler.ClienteNotFoundException;
+//import br.com.agenda.api.handler.ClienteNotFoundException;
 import br.com.agenda.api.model.Cliente;
 import br.com.agenda.api.service.ClienteService;
 
@@ -53,9 +53,9 @@ public class ClienteController {
 		Cliente cliente = service.getById(id);
 		if(cliente != null) {
 			service.removeClienteById(id);
-		}else {
-			throw new ClienteNotFoundException("Cliente não encontrado", null);
-		}
+		}//else {
+		//	throw new ClienteNotFoundException("Cliente não encontrado", null);
+		//}
 	}
 	
 	@PutMapping("/clientes")
@@ -63,13 +63,13 @@ public class ClienteController {
 		this.service.updateCliente(cliente);
 	}
 	
-	@GetMapping("/clientes/{nome}")
+	@GetMapping("/clientes/buscarPorNome/{nome}")
 	public Cliente buscaPorNome(@PathVariable String nome) {
 		Cliente cliente = this.service.buscaPorNome(nome);
 		return cliente;
 	}
 	
-	@GetMapping("/buscarPorEmail/{email}")
+	@GetMapping("clientes/buscarPorEmail/{email}")
 	public Cliente buscaPorEmail(@PathVariable String email) {
 		Cliente cliente = this.service.buscaPorEmail(email);
 		return cliente;
